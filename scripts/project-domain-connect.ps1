@@ -68,7 +68,10 @@ if ($Phase -eq 'MigrateNameservers') {
   if (-not (Test-Path 'reports/ds-transition-safe.json')) { throw 'BLOCKED: safe DS cache gate not yet present' }
   $gate=Get-Content reports/ds-transition-safe.json -Raw | ConvertFrom-Json
   if ($gate.domain -ne $domain -or -not $gate.safe -or $gate.old_ds_ttl -ne 3600 -or $gate.elapsed_seconds -lt 5400) { throw 'BLOCKED: invalid DS transition gate' }
-  if (([DateTimeOffset]::UtcNow-[DateTimeOffset]::Parse($gate.checked_at)).TotalSeconds -gt 300) { throw 'BLOCKED: DS transition evidence older than five minutes' }
+  # ConvertFrom-Json may produce a UTC DateTime. Casting preserves its Kind;
+  # parsing its localized string would silently reinterpret UTC as local time.
+  $evidenceAge=([DateTimeOffset]::UtcNow-[DateTimeOffset]$gate.checked_at).TotalSeconds
+  if ($evidenceAge -lt 0 -or $evidenceAge -gt 300) { throw 'BLOCKED: DS transition evidence is outside the five-minute window' }
   if (@($gate.authorities).Count -ne 6 -or @($gate.authorities | Where-Object { -not $_.authoritative -or $_.rcode -ne 0 -or $_.ds_count -ne 0 }).Count) { throw 'BLOCKED: authority DS check failed' }
   if (@($gate.resolvers).Count -lt 2 -or @($gate.resolvers | Where-Object { $_.http -ne 200 -or $_.status -ne 0 -or $_.ds_count -ne 0 }).Count) { throw 'BLOCKED: recursive DS check failed' }
   $updated=Api 'Spaceship' 'PUT' "/domains/$domain/nameservers" @{provider='custom';hosts=$actual}

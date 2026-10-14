@@ -3,18 +3,39 @@
 @tailwind utilities;
 
 /* Optional config-driven hero artwork; no game content in the renderer. */
-.hero-layout { display: grid; align-items: center; gap: 2rem; }
-.hero-copy { min-width: 0; }
-.hero-art { width: min(100%, 480px); height: auto; margin: auto; }
+.hero-layout {
+  display: grid;
+  align-items: center;
+  gap: 2rem;
+}
+.hero-copy {
+  min-width: 0;
+}
+.hero-art {
+  width: min(100%, 480px);
+  height: auto;
+  margin: auto;
+}
 @media (min-width: 900px) {
-  .hero-layout { grid-template-columns: 1.2fr 1fr; }
-  .hero-art { transform: rotate(-5deg); }
+  .hero-layout {
+    grid-template-columns: 1.2fr 1fr;
+  }
+  .hero-art {
+    transform: rotate(-5deg);
+  }
 }
 @media (max-width: 899px) {
-  .hero-art { width: 260px; }
+  .hero-art {
+    width: 260px;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /**
@@ -44,7 +65,8 @@
     --brand-light: 337 66% 57%;
     --brand-h: 337;
     --brand-s: 66%;
-    --brand-text: var(--brand-h) var(--brand-s) 52%;
+    /* Bright enough for text on dark surfaces, including pink fork themes. */
+    --brand-text: var(--brand-h) var(--brand-s) 60%;
   }
 }
 

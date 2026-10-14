@@ -10,6 +10,8 @@ export interface SiteConfig {
   name: string;
   /** Short name for PWA manifest, mobile logo, and the long-title <title> suffix (>50 chars). e.g. "AQ Wiki" */
   shortName: string;
+  /** Iconify icon for the site's header identity. */
+  logoIcon?: string;
   /** Site description for Organization JSON-LD and og:site_name. */
   description: string;
   /** Domain without protocol or trailing slash. e.g. "anvilquestwiki.wiki" */
@@ -62,37 +64,31 @@ export interface SiteConfig {
 }
 
 export const site: SiteConfig = {
-  name: 'Anvil Quest Wiki',
-  shortName: 'AQ Wiki',
+  name: 'Just Dance Decades of Hits Guide',
+  shortName: 'Decades Guide',
+  logoIcon: 'lucide:music',
   description:
-    'Complete Anvil Quest wiki with boss guides, tier lists, codes, item locations, and beginner tips. Every guide carries a last-verified date.',
-  domain: 'anvil.wiki',
-  tagline: 'Your forge for everything Anvil Quest',
+    'Unofficial Just Dance: Decades of Hits guide with the 35-song tracklist, decade filters, Adventure Mode facts and platform release dates.',
+  domain: 'justdancedecadesofhitsguide.wiki',
+  tagline: 'Find your song. Pick your decade.',
   legalNotice:
-    'Anvil Quest Wiki is a fan-made community site. Not affiliated with or endorsed by the game developer.',
-  // 👉 APPLY TEMPLATE: set a real address if you run no social channels —
-  // the contact page renders it as a mailto link.
+    'Unofficial Fan Guide — Not affiliated with or endorsed by Ubisoft or the Just Dance rightsholders.',
+  defaultAuthor: 'Decades Guide Editorial',
+  // Set a real address if you run no social channels — the contact page
+  // renders it as a mailto link.
   contactEmail: '',
   social: {
-    official: 'https://example.com/anvil-quest',
-    discord: 'https://discord.gg/example',
-    youtube: 'https://youtube.com/@example',
-    twitter: 'https://twitter.com/example',
-    reddit: 'https://reddit.com/r/anvilquest',
+    official: 'https://www.ubisoft.com/en-us/game/just-dance/decades-of-hits',
   },
-  // 👉 APPLY TEMPLATE: point these at the game's real canonical pages.
-  sameAs: [
-    'https://example.com/anvil-quest',
-    'https://en.wikipedia.org/wiki/Anvil_Quest',
-  ],
   game: {
-    name: 'Anvil Quest',
-    platform: 'Roblox',
-    developer: 'Forge Studios',
-    genre: 'Fantasy RPG',
-    releaseDate: '2026-01-15',
+    name: 'Just Dance: Decades of Hits',
+    platform: 'Nintendo Switch, PlayStation 5, Xbox Series X|S; Switch 2 on November 10, 2026',
+    developer: 'Ubisoft',
+    genre: 'Music and dance',
+    releaseDate: '2026-10-13',
   },
-  // hero.webp is 1200×630 (the recommended OG share aspect ratio).
+  // og:image dims of the SHIPPED hero.webp — if you replace public/images/hero.webp,
+  // update these in src/config/site.ts to match (wrong dims mis-crop share cards).
   ogImageWidth: 1200,
   ogImageHeight: 630,
 };

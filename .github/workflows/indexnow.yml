@@ -1,15 +1,15 @@
 name: IndexNow
 
 on:
-  workflow_run:
-    workflows: [CI]
-    types: [completed]
+  # Direct-upload Pages deployments are independent of GitHub CI.
+  # Run only after verifying the production deployment and custom domain.
+  workflow_dispatch:
 
 permissions:
   contents: read
 
 concurrency:
-  group: indexnow-${{ github.event.workflow_run.head_branch }}
+  group: indexnow-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -17,16 +17,11 @@ jobs:
     # Only successful PUSH builds on main can notify IndexNow; pull-request
     # CI never submits URLs. Uninitialized forks stop after checkout/config
     # detection, before installing dependencies or making external requests.
-    if: >-
-      github.event.workflow_run.conclusion == 'success' &&
-      github.event.workflow_run.event == 'push' &&
-      github.event.workflow_run.head_branch == 'main'
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
-        with:
-          ref: ${{ github.event.workflow_run.head_sha }}
 
       - name: Detect IndexNow configuration
         id: config
@@ -90,8 +85,7 @@ jobs:
         env:
           SITE_URL: ${{ steps.config.outputs.site_url }}
           INDEXNOW_KEY: ${{ vars.INDEXNOW_KEY }}
-          DEPLOY_SHA: ${{ github.event.workflow_run.head_sha }}
         run: >-
           pnpm submit-indexnow -- --site "$SITE_URL"
-          --wait-for-deploy "$DEPLOY_SHA" --wait-for-key
+          --wait-for-key
           --wait-seconds 150

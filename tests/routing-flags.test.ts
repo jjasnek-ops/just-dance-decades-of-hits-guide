@@ -20,6 +20,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest';
 import { readDefaultLocale, readLocales } from '../scripts/lib/routing-flags';
+import { locales } from '~/i18n/routing';
 
 const repoRoot = join(dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -33,12 +34,12 @@ function makeRoutingFixture(content: string): string {
 
 describe('readLocales / readDefaultLocale — success', () => {
   test('parses the real repo routing.ts', () => {
-    expect(readLocales(repoRoot)).toEqual(['en', 'ja']);
+    expect(readLocales(repoRoot)).toEqual([...locales]);
     expect(readDefaultLocale(repoRoot)).toBe('en');
   });
 
   test('default root is the process cwd (repo root under vitest)', () => {
-    expect(readLocales()).toEqual(['en', 'ja']);
+    expect(readLocales()).toEqual([...locales]);
   });
 
   test('accepts defaultLocale with and without the `: Locale` annotation', () => {

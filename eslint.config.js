@@ -13,7 +13,16 @@ export default [
   {
     // .zcode/** — workflow-hub drafts (.dwf.ts) are gitignored tooling state,
     // not project code (their TS-flavored syntax trips the parser).
-    ignores: ['dist/**', 'node_modules/**', '.astro/**', '*.config.{js,ts,mjs}', 'tools/**', '.zcode/**'],
+    ignores: [
+      'dist/**',
+      'node_modules/**',
+      '.astro/**',
+      '*.config.{js,ts,mjs}',
+      'tools/**',
+      '.zcode/**',
+      'reports/**',
+      'research/**',
+    ],
   },
   // TypeScript files
   {
@@ -27,7 +36,10 @@ export default [
     },
     plugins: { '@typescript-eslint': eslint },
     rules: {
-      '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_', caughtErrors: 'none' }],
+      '@typescript-eslint/no-unused-vars': [
+        'warn',
+        { argsIgnorePattern: '^_', caughtErrors: 'none' },
+      ],
       '@typescript-eslint/no-explicit-any': 'off',
       'no-undef': 'off',
     },
@@ -54,7 +66,10 @@ export default [
     files: ['**/*.astro'],
     plugins: { '@typescript-eslint': eslint },
     rules: {
-      '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_', caughtErrors: 'none' }],
+      '@typescript-eslint/no-unused-vars': [
+        'warn',
+        { argsIgnorePattern: '^_', caughtErrors: 'none' },
+      ],
     },
   },
 ];

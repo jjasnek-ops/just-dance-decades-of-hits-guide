@@ -179,8 +179,8 @@ const privacyLabel = consent?.privacyLabel ?? footerStrings.privacyPolicy ?? 'Pr
     <link rel="canonical" href={new URL(Astro.url.pathname, siteUrl).href} />
 
     {/* hreflang alternates */}
-    {alternates.map((alt) => <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />)}
-    <link rel="alternate" hreflang="x-default" href={xDefaultHref} />
+    {alternates.length > 1 && alternates.map((alt) => <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />)}
+    {alternates.length > 1 && <link rel="alternate" hreflang="x-default" href={xDefaultHref} />}
 
     {/* Open Graph */}
     <meta property="og:type" content={article ? 'article' : 'website'} />

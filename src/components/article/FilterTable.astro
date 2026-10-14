@@ -1,0 +1,81 @@
+---
+interface Props {
+  headers: string[];
+  rows: string[][];
+  filterColumn: number;
+  labels: { search: string; placeholder: string; filter: string; all: string; sort: string; original: string; ascending: string; reset: string; count: string; empty: string; caption: string };
+}
+const { headers, rows, filterColumn, labels } = Astro.props;
+const filters = [...new Set(rows.map(row => row[filterColumn]))];
+---
+<filter-table class="catalogue not-prose" data-count-label={labels.count}>
+  <form class="catalogue-controls" role="search">
+    <label class="catalogue-query">{labels.search}<input type="search" placeholder={labels.placeholder} name="query" autocomplete="off" /></label>
+    <label>{labels.filter}<select name="filter"><option value="">{labels.all}</option>{filters.map(filter => <option value={filter}>{filter}</option>)}</select></label>
+    <label>{labels.sort}<select name="sort"><option value="original">{labels.original}</option><option value="ascending">{labels.ascending}</option></select></label>
+    <button type="reset" class="btn-outline">{labels.reset}</button>
+  </form>
+  <p class="catalogue-count" aria-live="polite">{rows.length} / {rows.length} {labels.count}</p>
+  <div class="catalogue-scroll" tabindex="0" role="region" aria-label={labels.caption}>
+    <table>
+      <caption>{labels.caption}</caption>
+      <thead><tr>{headers.map(header => <th scope="col">{header}</th>)}</tr></thead>
+      <tbody>{rows.map((row, index) => <tr data-index={index} data-filter={row[filterColumn]}>{row.map((cell, cellIndex) => cellIndex === 0 ? <th scope="row">{cell}</th> : <td>{cell}</td>)}</tr>)}</tbody>
+    </table>
+  </div>
+  <p class="catalogue-empty" hidden>{labels.empty}</p>
+</filter-table>
+<script>
+  class FilterTable extends HTMLElement {
+    connectedCallback() {
+      if (this.dataset.ready) return;
+      this.dataset.ready = 'true';
+      const form = this.querySelector('form')!;
+      const query = form.elements.namedItem('query') as HTMLInputElement;
+      const filter = form.elements.namedItem('filter') as HTMLSelectElement;
+      const sort = form.elements.namedItem('sort') as HTMLSelectElement;
+      const body = this.querySelector('tbody')!;
+      const rows = Array.from(body.rows);
+      const normalize = (value: string) => value.toLocaleLowerCase('en').normalize('NFKD').replace(/[\u0300-\u036f]/g, '');
+      const update = () => {
+        const terms = normalize(query.value.trim()).split(/\s+/).filter(Boolean);
+        let visible = 0;
+        rows.forEach(row => {
+          const text = normalize(row.textContent ?? '');
+          row.hidden = !terms.every(term => text.includes(term)) || (!!filter.value && row.dataset.filter !== filter.value);
+          if (!row.hidden) visible++;
+        });
+        [...rows].sort((a,b) => sort.value === 'ascending'
+          ? (a.cells[0].textContent ?? '').localeCompare(b.cells[0].textContent ?? '', 'en')
+          : Number(a.dataset.index) - Number(b.dataset.index)).forEach(row => body.append(row));
+        this.querySelector('.catalogue-count')!.textContent = `${visible} / ${rows.length} ${this.dataset.countLabel}`;
+        (this.querySelector('.catalogue-empty') as HTMLElement).hidden = visible !== 0;
+      };
+      form.addEventListener('submit', event => event.preventDefault());
+      form.addEventListener('input', update);
+      form.addEventListener('change', update);
+      form.addEventListener('reset', () => queueMicrotask(update));
+    }
+  }
+  if (!customElements.get('filter-table')) customElements.define('filter-table', FilterTable);
+</script>
+<style>
+  .catalogue { display:block; margin:2rem 0; }
+  .catalogue-controls { display:flex; flex-wrap:wrap; gap:.8rem; align-items:end; padding:1.2rem; border:1px solid hsl(var(--border)); border-radius:1rem; background:hsl(var(--muted)); }
+  label { display:flex; flex-direction:column; gap:.4rem; font-size:.8rem; font-weight:600; }
+  .catalogue-query { flex:1 1 220px; }
+  input, select { width:100%; min-height:44px; padding:.6rem .8rem; border:1px solid hsl(var(--border)); border-radius:.5rem; background:hsl(var(--background)); color:hsl(var(--foreground)); font-size:1rem; }
+  input:focus-visible, select:focus-visible { outline:2px solid hsl(var(--brand-text)); outline-offset:2px; }
+  .catalogue-count { font-size:.8rem; color:hsl(var(--muted-foreground)); margin:1rem 0; }
+  .catalogue-scroll { overflow:auto; border:1px solid hsl(var(--border)); border-radius:.8rem; }
+  table { width:100%; border-collapse:collapse; font-size:.9rem; }
+  caption { text-align:left; padding:1rem; font-size:.8rem; color:hsl(var(--muted-foreground)); }
+  th, td { text-align:left; padding:.9rem 1rem; border-bottom:1px solid hsl(var(--border)); }
+  thead { background:hsl(var(--muted)); }
+  tbody th { font-weight:650; min-width:180px; }
+  tbody td:last-child { white-space:nowrap; color:hsl(var(--brand-text)); font-weight:600; }
+  tbody tr:nth-child(even) { background:hsl(var(--muted) / .45); }
+  tr[hidden], [hidden] { display:none; }
+  .catalogue-empty { padding:1rem; background:hsl(var(--muted)); }
+  @media(max-width:480px) { label:not(.catalogue-query) { flex:1 1 100px; } }
+</style>

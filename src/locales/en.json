@@ -1,23 +1,21 @@
 {
   "$schema": "../../docs/home.schema.json",
   "site": {
-    "name": "Anvil Quest Wiki",
-    "shortName": "AQ Wiki",
-    "description": "Complete Anvil Quest wiki with boss guides, tier lists, codes, item locations, and beginner tips. Every guide carries a last-verified date.",
-    "tagline": "Your forge for everything Anvil Quest",
-    "legalNotice": "Anvil Quest Wiki is a fan-made community site. Not affiliated with or endorsed by the game developer."
+    "name": "Just Dance Decades of Hits Guide",
+    "shortName": "Decades Guide",
+    "description": "Unofficial Just Dance: Decades of Hits guide with the 35-song tracklist, decade filters, Adventure Mode facts and platform release dates.",
+    "tagline": "Find your song. Pick your decade.",
+    "legalNotice": "Unofficial Fan Guide — Not affiliated with or endorsed by Ubisoft or the Just Dance rightsholders."
   },
   "nav": {
     "home": "Home",
-    "bosses": "Bosses",
-    "guides": "Guides",
-    "items": "Items",
-    "codes": "Codes",
     "toggleTheme": "Toggle theme",
     "menu": "Menu",
     "close": "Close",
     "search": "Search",
-    "language": "Language"
+    "language": "Language",
+    "songs": "Songs",
+    "guides": "Guides"
   },
   "search": {
     "placeholder": "Search the wiki...",
@@ -57,24 +55,7 @@
       "source": "Source",
       "code": "Code"
     },
-    "codesFaq": [
-      {
-        "question": "How do I redeem codes?",
-        "answer": "Open the game, click the settings gear in the top-right, paste your code into the Redeem Code field, and confirm. Codes are case-sensitive."
-      },
-      {
-        "question": "Why do codes stop working?",
-        "answer": "Codes expire on a schedule set by the developer (usually monthly or tied to update milestones), and some are one-per-account. This page is re-tested regularly."
-      },
-      {
-        "question": "How often are new codes released?",
-        "answer": "New codes typically arrive with each major game update. Bookmark this page and check back after every patch."
-      },
-      {
-        "question": "Do codes expire?",
-        "answer": "Yes — most codes have an expiry date, shown next to each code. Expired codes move to the expired table below."
-      }
-    ],
+    "codesFaq": [],
     "possiblyOutdated": "This guide was last checked on",
     "outdatedNote": "— the game may have changed since. Some details could be out of date.",
     "prevArticle": "Previous",
@@ -125,289 +106,237 @@
     "feedbackNo": "No",
     "breadcrumbAria": "Breadcrumb",
     "wikiNavAria": "Wiki navigation",
-    "paginationAria": "Article pagination"
+    "paginationAria": "Article pagination",
+    "wikiIntro": "An independent reference for the song catalogue, Adventure Mode and platform differences. Facts are linked to official sources and dated."
   },
   "overview": {
-    "bosses": {
-      "overviewTitle": "All Bosses",
-      "overviewDescription": "Complete strategy guides for every boss in Anvil Quest, including attack patterns, weaknesses, and recommended loadouts."
+    "songs": {
+      "overviewTitle": "Song List & Tracklist",
+      "overviewDescription": "Search the 35-song Just Dance: Decades of Hits launch tracklist with artist and decade filters, source notes and base-release scope."
     },
     "guides": {
-      "overviewTitle": "All Guides",
-      "overviewDescription": "In-depth tutorials covering progression, crafting, combat mechanics, and advanced strategies for Anvil Quest."
-    },
-    "items": {
-      "overviewTitle": "All Items",
-      "overviewDescription": "Comprehensive item database with locations, stats, rarity tiers, and crafting recipes."
-    },
-    "codes": {
-      "overviewTitle": "All Codes",
-      "overviewDescription": "Active Anvil Quest codes for free coins, gems, and exclusive items. Verified daily."
+      "overviewTitle": "Just Dance: Decades of Hits Guides",
+      "overviewDescription": "Official-source answers about platforms, Adventure Mode, multiplayer, controllers, offline access and Just Dance+ library differences."
     }
   },
   "home": {
     "meta": {
-      "title": "Anvil Quest Wiki - Complete Boss Guides, Codes & Tier Lists",
-      "description": "The most complete Anvil Quest wiki. Boss strategies, active codes, item locations, tier lists, and beginner guides. Every page shows when it was last verified."
-    },
-    "hero": {
-      "badge": "Fan-Made Community Wiki",
-      "title": "Anvil Quest Wiki",
-      "description": "Your complete guide to Anvil Quest. Boss strategies, active codes, item locations, tier lists, and everything you need to master the forge.",
-      "ctaPrimary": "Play Anvil Quest",
-      "ctaSecondary": "Browse Guides",
-      "videoId": ""
+      "title": "Just Dance: Decades of Hits — Song List & Guides",
+      "description": "All 35 launch songs, searchable by title, artist and decade. Explore Adventure Mode, platform dates and controller requirements in this unofficial guide."
     },
     "updates": {
-      "title": "Recent Updates"
+      "title": "The launch essentials"
     },
-    "start": {
-      "badge": "Start Here",
-      "title": "Your Anvil Quest Journey",
-      "cards": [
+    "popular": {
+      "badge": "AT A GLANCE",
+      "title": "Know before you dance",
+      "quickLinks": [
         {
-          "number": "1",
-          "title": "Beginner Guide",
-          "description": "New to Anvil Quest? Start here with the essential mechanics, controls, and your first hour walkthrough.",
-          "icon": "lucide:book-open",
-          "href": "/guides/beginner-guide"
+          "label": "35 base-release songs",
+          "href": "/songs/song-list/"
         },
         {
-          "number": "2",
-          "title": "Active Codes",
-          "description": "Redeem the latest codes for free coins, gems, and exclusive cosmetic items.",
-          "icon": "lucide:gift",
-          "href": "/codes"
+          "label": "Up to 6 local dancers",
+          "href": "/guides/multiplayer/"
         },
         {
-          "number": "3",
-          "title": "Boss Strategies",
-          "description": "Complete guides for every boss with attack patterns, weaknesses, and recommended loadouts.",
-          "icon": "lucide:swords",
-          "href": "/bosses"
+          "label": "Adventure scores are separate",
+          "href": "/guides/adventure-mode/"
         },
         {
-          "number": "4",
-          "title": "Weapon Tier List",
-          "description": "Ranking every weapon from S to C based on DPS, utility, and synergy.",
-          "icon": "lucide:list-ordered",
-          "href": "/guides/weapon-tier-list"
+          "label": "Base songs vs Just Dance+",
+          "href": "/guides/library-and-subscription/"
         }
       ]
     },
-    "popular": {
-      "badge": "Trending Now",
-      "title": "Most Read This Week",
-      "quickLinks": [
+    "closingCta": {
+      "title": "Your next favorite is in the tracklist.",
+      "description": "Start with the songs, then choose a mode. Every guide links its sources and states what is still unverified.",
+      "primary": "Browse the guides",
+      "secondary": "",
+      "primaryHref": "/guides/"
+    },
+    "hero": {
+      "badge": "UNOFFICIAL FAN GUIDE · LAUNCH CHECKED OCT 14, 2026",
+      "title": "Just Dance: Decades of Hits",
+      "description": "35 songs. Six musical decades. Find your next dance, explore the new Adventure Mode and check which version works with your console.",
+      "ctaPrimary": "Explore all 35 songs",
+      "ctaSecondary": "Platform & Switch 2 guide",
+      "ctaPrimaryHref": "/songs/song-list/",
+      "ctaSecondaryHref": "/guides/platforms/",
+      "image": "/images/record-art.svg",
+      "imageAlt": "Original illustrated vinyl record with concentric rings representing six musical decades",
+      "videoId": ""
+    },
+    "start": {
+      "badge": "YOUR NEXT DANCE",
+      "title": "Start with what you came for",
+      "cards": [
         {
-          "label": "Emberfang Boss Guide",
-          "href": "/bosses/emberfang"
+          "number": "01 / TRACKLIST",
+          "title": "All 35 songs",
+          "description": "Search titles and artists. Filter the official decade groups.",
+          "icon": "lucide:music",
+          "href": "/songs/song-list/"
         },
         {
-          "label": "Best Weapons Tier List",
-          "href": "/guides/weapon-tier-list"
+          "number": "02 / STORY",
+          "title": "Adventure Mode",
+          "description": "Six worlds, co-op and what progression actually unlocks.",
+          "icon": "lucide:compass",
+          "href": "/guides/adventure-mode/"
         },
         {
-          "label": "Beginner Guide",
-          "href": "/guides/beginner-guide"
+          "number": "03 / CONSOLES",
+          "title": "Platforms & Switch 2",
+          "description": "October 13 launch vs the November 10 Switch 2 edition.",
+          "icon": "lucide:gamepad-2",
+          "href": "/guides/platforms/"
         },
         {
-          "label": "All Active Codes",
-          "href": "/codes"
+          "number": "04 / FIRST SESSION",
+          "title": "Controls & offline",
+          "description": "Phone support and the verified Switch download steps.",
+          "icon": "lucide:smartphone",
+          "href": "/guides/how-to-play/"
         }
       ]
     },
     "explore": {
-      "title": "Explore the Wiki",
-      "description": "Everything you need, organized by category. Pick a topic and dive in.",
+      "title": "Six decades. One collection.",
+      "description": "The game groups its launch songs by era. These are official game groups, not original recording years.",
       "modules": [
         {
           "order": 1,
-          "name": "Anvil Quest Codes",
-          "description": "Active codes for free coins, gems, and exclusive items. Updated daily.",
-          "href": "/codes",
-          "displayType": "badge-list",
+          "name": "From disco to the dance floor",
+          "description": "A filterable catalogue with the credited game artists and every launch song.",
+          "href": "/songs/song-list/",
+          "displayType": "labeled-cards",
           "highlights": [
             {
-              "label": "HEARTHFIRE-2026",
-              "detail": "+600 Gold · expires Nov 30 (extended)",
-              "badge": "Active"
+              "label": "1970s",
+              "detail": "Mamma Mia · Crocodile Rock"
             },
             {
-              "label": "ASHENKEEP",
-              "detail": "Ashen Keep cosmetic set",
-              "badge": "Active"
+              "label": "1980s",
+              "detail": "Uptown Girl · It’s Tricky"
             },
             {
-              "label": "NEWPLAYER",
-              "detail": "Starter bundle (new accounts)",
-              "badge": "Active"
+              "label": "1990s",
+              "detail": "Wannabe · Around the World"
+            },
+            {
+              "label": "2000s",
+              "detail": "Bye Bye Bye · Feel Good Inc."
+            },
+            {
+              "label": "2010s",
+              "detail": "Danza Kuduro · Turn Down for What"
+            },
+            {
+              "label": "2020s",
+              "detail": "Manchild · HOT TO GO!"
             }
           ]
         },
         {
           "order": 2,
-          "name": "Boss Strategies",
-          "description": "Complete guides for every boss with attack patterns and weaknesses.",
-          "href": "/bosses",
-          "displayType": "labeled-cards",
+          "name": "A new journey through time",
+          "description": "Join Lyra Gigavolt. The story offers its own progress and exclusive rewards.",
+          "href": "/guides/adventure-mode/",
+          "displayType": "steps",
           "highlights": [
             {
-              "label": "Emberfang",
-              "detail": "Frost warden, early-game gatekeeper"
+              "label": "01",
+              "detail": "Explore six decade-themed boards"
             },
             {
-              "label": "Stormcaller",
-              "detail": "Fire titan, mid-game DPS check"
+              "label": "02",
+              "detail": "Dance, answer quizzes and sort"
             },
             {
-              "label": "Voidking",
-              "detail": "Final boss, requires full prep"
+              "label": "03",
+              "detail": "Play locally with 1–6 dancers"
+            },
+            {
+              "label": "04",
+              "detail": "Keep story progress separate from high scores"
             }
           ]
         },
         {
           "order": 3,
-          "name": "Progression Guides",
-          "description": "Leveling routes, class builds, and endgame preparation.",
-          "href": "/guides",
-          "displayType": "steps",
+          "name": "Two Nintendo release dates",
+          "description": "Understand the current Switch release and the upcoming dedicated Switch 2 edition.",
+          "href": "/guides/platforms/",
+          "displayType": "timeline",
           "highlights": [
             {
-              "label": "1",
-              "detail": "Pick a starting class"
+              "label": "OCT 13, 2026",
+              "detail": "Switch · PS5 · Xbox Series X|S released"
             },
             {
-              "label": "2",
-              "detail": "Clear the tutorial forge"
+              "label": "OCT 14, 2026",
+              "detail": "Official sources checked for this guide"
             },
             {
-              "label": "3",
-              "detail": "Unlock the Shattered Isles"
-            },
-            {
-              "label": "4",
-              "detail": "Defeat your first world boss"
+              "label": "NOV 10, 2026",
+              "detail": "Dedicated Switch 2 version scheduled; free Switch upgrade announced"
             }
           ]
         },
         {
           "order": 4,
-          "name": "Weapon Tier List",
-          "description": "Ranking every weapon from S to C based on DPS, utility, and synergy.",
-          "href": "/guides/weapon-tier-list",
-          "displayType": "ranked-grid",
+          "name": "Build your party",
+          "description": "Choose input methods, understand profiles and separate base songs from extra content.",
+          "href": "/guides/multiplayer/",
+          "displayType": "labeled-cards",
           "highlights": [
             {
-              "label": "S",
-              "detail": "Voidforge Blade, Stormcaller"
+              "label": "Local play",
+              "detail": "Up to six people on one console"
             },
             {
-              "label": "A",
-              "detail": "Emberclaw, Frostpike"
+              "label": "Dancer Cards",
+              "detail": "Progress, rewards and scores are shared"
             },
             {
-              "label": "B",
-              "detail": "Ironwood Bow, Mace of Dawn"
-            },
-            {
-              "label": "C",
-              "detail": "Starter weapons"
-            }
-          ]
-        },
-        {
-          "order": 5,
-          "name": "Update History",
-          "description": "Major patches and events, newest first.",
-          "href": "/recent",
-          "displayType": "timeline",
-          "highlights": [
-            {
-              "label": "v2.5",
-              "detail": "New raid: Shadowforge released",
-              "badge": "Latest"
-            },
-            {
-              "label": "v2.4",
-              "detail": "Rebalanced all S-tier weapons"
-            },
-            {
-              "label": "v2.3",
-              "detail": "Added 3 new bosses"
-            },
-            {
-              "label": "v2.2",
-              "detail": "Launched season pass system"
-            }
-          ]
-        },
-        {
-          "order": 6,
-          "name": "Video Guides",
-          "description": "Watch the best Anvil Quest walkthroughs and boss fights.",
-          "href": "/guides",
-          "displayType": "video-grid",
-          "highlights": [
-            {
-              "title": "Beginner Walkthrough",
-              "youtubeId": "dQw4w9WgXcQ",
-              "duration": "12:34"
-            },
-            {
-              "title": "All Bosses Ranked",
-              "youtubeId": "aaaaaaaaaaa",
-              "duration": "18:42"
-            },
-            {
-              "title": "Speedrun Guide",
-              "youtubeId": "bbbbbbbbbbb",
-              "duration": "25:10"
-            },
-            {
-              "title": "Hidden Secrets",
-              "youtubeId": "ccccccccccc",
-              "duration": "9:15"
+              "label": "Just Dance+",
+              "detail": "An active subscription is a separate entitlement"
             }
           ]
         }
       ]
     },
     "faq": {
-      "title": "Frequently Asked Questions",
-      "description": "Quick answers to the most common questions about Anvil Quest.",
+      "title": "Just Dance: Decades of Hits FAQ",
+      "description": "Source-checked answers about the 35-song release, launch dates, story mode and multiplayer. Checked October 14, 2026.",
       "items": [
         {
-          "question": "What is Anvil Quest?",
-          "answer": "Anvil Quest is a fantasy RPG on Roblox where you play as a blacksmith apprentice forging weapons and battling bosses across the Shattered Isles. It launched in January 2026 and has over 12 million visits."
+          "question": "How many songs are in Decades of Hits?",
+          "answer": "Ubisoft’s October 13, 2026 launch article lists 35 songs. That is the base-release list, not the total of a combined library with earlier purchases or Just Dance+."
         },
         {
-          "question": "Which class should beginners pick in Anvil Quest?",
-          "answer": "Warrior is the most beginner-friendly class thanks to high HP and simple mechanics. Once you understand the game, Rogue offers the highest damage output for experienced players."
+          "question": "When does the dedicated Switch 2 edition release?",
+          "answer": "November 10, 2026, according to Ubisoft and Nintendo. Switch, PS5 and Xbox Series X|S launched October 13. Nintendo lists Switch backward compatibility on Switch 2 separately."
         },
         {
-          "question": "How do I redeem codes in Anvil Quest?",
-          "answer": "Open the game, click the settings gear in the top-right, paste your code into the 'Redeem Code' field, and hit confirm. Codes are case-sensitive."
+          "question": "Do I have to finish Adventure Mode to unlock the songs?",
+          "answer": "No. Ubisoft’s 27.0.1 patch notes state that all included songs remain accessible in the Song Library regardless of Adventure Mode progress."
         },
         {
-          "question": "Is Anvil Quest free to play?",
-          "answer": "Yes, Anvil Quest is completely free on Roblox. There are optional cosmetic microtransactions, but they do not affect gameplay balance."
+          "question": "How many people can dance locally?",
+          "answer": "Up to six people. The 27.0.1 notes also confirm Adventure Mode local co-op for one to six players. Input accessories and online requirements depend on the setup."
         },
         {
-          "question": "How often does Anvil Quest update?",
-          "answer": "Forge Studios releases major content updates roughly every two weeks, with smaller hotfixes in between. New bosses and codes are typically added with each major patch."
+          "question": "Is this an official Ubisoft website?",
+          "answer": "No. This is an unofficial fan guide, not affiliated with or endorsed by Ubisoft or the Just Dance rightsholders. Its sources are Ubisoft’s launch and patch articles and Nintendo’s store and launch news."
         }
       ]
-    },
-    "closingCta": {
-      "title": "Ready to Master the Forge?",
-      "description": "Bookmark this wiki and check back daily for new codes, boss guides, and tier list updates.",
-      "primary": "Play Anvil Quest",
-      "secondary": "Join Our Discord"
     }
   },
   "footer": {
-    "playGame": "Play Anvil Quest",
+    "playGame": "Official game website",
     "officialDiscord": "Official Discord",
     "officialYoutube": "Official YouTube",
     "officialTwitter": "Official Twitter",
@@ -418,8 +347,186 @@
     "termsOfService": "Terms of Service",
     "copyright": "Copyright",
     "contact": "Contact",
-    "copyrightText": "© 2026 Anvil Quest Wiki. Fan-made, not affiliated with Forge Studios.",
+    "copyrightText": "© 2026 Just Dance Decades of Hits Guide. Original editorial content; game and music trademarks belong to their owners.",
     "community": "Community",
     "legal": "Legal"
+  },
+  "legalPages": {
+    "about": {
+      "intro": "Just Dance Decades of Hits Guide is an independent English-language reference site. Unofficial Fan Guide — Not affiliated with or endorsed by Ubisoft or the Just Dance rightsholders.",
+      "sections": [
+        {
+          "heading": "What this guide covers",
+          "text": "The 35-song official launch catalogue, platform release dates, Adventure Mode rules, multiplayer, supported control facts and library entitlements.",
+          "links": []
+        },
+        {
+          "heading": "How information is checked",
+          "text": "We link the sources used for each page and distinguish publication, substantive modification and fact-check dates. Official Ubisoft and Nintendo material is the primary basis. Unverified reward thresholds, difficulty ratings and regional variations are not presented as fact.",
+          "links": []
+        },
+        {
+          "heading": "Editorial scope",
+          "text": "These are researched guides, not claims of firsthand playtesting. Spelling corrections and source disagreements are explained. The launch review date is October 14, 2026; articles change only when evidence changes.",
+          "links": []
+        },
+        {
+          "heading": "Corrections",
+          "text": "Send a source URL and the affected page in a repository issue. Please do not include personal information, account details or credentials.",
+          "links": [
+            {
+              "label": "Report an editorial correction",
+              "href": "https://github.com/jjasnek-ops/just-dance-decades-of-hits-guide/issues"
+            }
+          ]
+        }
+      ]
+    },
+    "privacy-policy": {
+      "intro": "This notice describes the current launch configuration of this static guide. Last updated October 14, 2026.",
+      "sections": [
+        {
+          "heading": "Accounts and submissions",
+          "text": "Reading the guide requires no account. The site has no login, purchase, upload, email capture or contact form. Song filtering and Pagefind searches run in your browser; this site does not provide an analytics endpoint to collect those queries.",
+          "links": []
+        },
+        {
+          "heading": "Cookies and browser storage",
+          "text": "Advertisements, Google Analytics, Cloudflare Web Analytics and third-party comments are disabled. Theme preference and helpfulness feedback may be stored locally by template features. Local storage can be cleared through browser settings.",
+          "links": []
+        },
+        {
+          "heading": "Hosting and request processing",
+          "text": "When deployed, Cloudflare delivers the site and may process request data such as IP addresses for network delivery, security and performance. The hosting provider has its own policies.",
+          "links": [
+            {
+              "label": "Cloudflare privacy policy",
+              "href": "https://www.cloudflare.com/privacypolicy/"
+            }
+          ]
+        },
+        {
+          "heading": "External links",
+          "text": "Following a Ubisoft, Nintendo, artist or GitHub link leaves this site. Their privacy policies apply there. We embed no song audio, music videos or third-party player at launch.",
+          "links": []
+        },
+        {
+          "heading": "Future changes and privacy contact",
+          "text": "This notice must be revised before enabling analytics, advertising or other data collection. For a question about the guide, use the repository issue channel without submitting private account information.",
+          "links": [
+            {
+              "label": "Contact the guide maintainers",
+              "href": "https://github.com/jjasnek-ops/just-dance-decades-of-hits-guide/issues"
+            }
+          ]
+        }
+      ]
+    },
+    "terms-of-service": {
+      "intro": "This website provides independent informational guides about Just Dance: Decades of Hits. Last updated October 14, 2026.",
+      "sections": [
+        {
+          "heading": "Using the guide",
+          "text": "Information can change with updates, regions, editions and subscriptions. Each guide identifies its checked scope and sources. Check the official store and support documentation when deciding what to purchase or which equipment to use.",
+          "links": []
+        },
+        {
+          "heading": "Purchases and game access",
+          "text": "This site does not sell the game or provide account access, downloads, music files or subscriptions. Purchases and game use are governed by the relevant publisher and platform terms.",
+          "links": []
+        },
+        {
+          "heading": "Editorial limitations",
+          "text": "We do not guarantee leaderboard outcomes, performance, availability of all regional content or future releases. Where a mechanic is not verified, the guide states that limit.",
+          "links": []
+        },
+        {
+          "heading": "Content and corrections",
+          "text": "Original editorial text and site artwork are ours; game, music and platform intellectual property belongs to its rightsholders. Report specific errors with supporting sources.",
+          "links": [
+            {
+              "label": "Copyright and trademark notice",
+              "href": "/copyright/"
+            },
+            {
+              "label": "Editorial correction channel",
+              "href": "https://github.com/jjasnek-ops/just-dance-decades-of-hits-guide/issues"
+            }
+          ]
+        }
+      ]
+    },
+    "copyright": {
+      "intro": "Unofficial Fan Guide — Not affiliated with or endorsed by Ubisoft or the Just Dance rightsholders.",
+      "sections": [
+        {
+          "heading": "Names and ownership",
+          "text": "Just Dance and Ubisoft names and trademarks belong to their respective owners. Artist names and song titles are used to identify catalogue facts. No ownership of music, choreography, game characters or publisher artwork is claimed.",
+          "links": []
+        },
+        {
+          "heading": "Materials on this website",
+          "text": "The launch site uses original abstract record artwork, generated editorial covers and factual song credits. It contains no copied lyrics, song audio, official logo, commercial key art or dance-video downloads. A fan-site disclaimer does not grant a licence to reuse protected material.",
+          "links": []
+        },
+        {
+          "heading": "Template attribution",
+          "text": "The engineering template is AnvilWiki v2.37.0, by PNGTRID and contributors, used under its MIT licence. The original licence is retained in the repository.",
+          "links": [
+            {
+              "label": "AnvilWiki source and MIT licence",
+              "href": "https://github.com/PNGTRID/AnvilWiki"
+            },
+            {
+              "label": "This site source",
+              "href": "https://github.com/jjasnek-ops/just-dance-decades-of-hits-guide"
+            }
+          ]
+        },
+        {
+          "heading": "Rights or takedown requests",
+          "text": "Use the repository issue channel to identify the material, affected URL, your rights and a suitable reply method. Do not post confidential documents or private identifiers in a public issue.",
+          "links": [
+            {
+              "label": "Rights and editorial contact",
+              "href": "https://github.com/jjasnek-ops/just-dance-decades-of-hits-guide/issues"
+            }
+          ]
+        }
+      ]
+    },
+    "contact": {
+      "intro": "For this independent guide, use the repository issue channel. Ubisoft’s support team is a separate service for game and account issues.",
+      "sections": [
+        {
+          "heading": "Corrections and rights requests",
+          "text": "Include the page URL, a specific description and a source where possible. Keep account details, payment information and private identifiers out of public issues.",
+          "links": [
+            {
+              "label": "Guide issues and corrections",
+              "href": "https://github.com/jjasnek-ops/just-dance-decades-of-hits-guide/issues"
+            },
+            {
+              "label": "Copyright notice",
+              "href": "/copyright/"
+            }
+          ]
+        },
+        {
+          "heading": "Official game resources",
+          "text": "The links below belong to the game publisher. They do not represent the maintainers of this guide.",
+          "links": [
+            {
+              "label": "Official game website",
+              "href": "https://www.ubisoft.com/en-us/game/just-dance/decades-of-hits"
+            },
+            {
+              "label": "Ubisoft Help",
+              "href": "https://www.ubisoft.com/en-us/help"
+            }
+          ]
+        }
+      ]
+    }
   }
 }

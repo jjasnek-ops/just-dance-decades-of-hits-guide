@@ -1,5 +1,9 @@
 # AGENTS.md
 
+## Current configured site
+
+This checkout is the independent English Just Dance: Decades of Hits guide at `justdancedecadesofhitsguide.wiki`, derived from AnvilWiki v2.37.0. Use the current `README.md`, `src/config/` and `wrangler.toml` for project identity. Demo-only suites are retained but excluded in `vitest.config.ts`; the default configured-site run includes 17 suites. Reports and browser research captures stay local and are Git-ignored. API credentials must stay in process memory. Domain operations are limited to this domain and its corresponding Pages project; do not change DNSSEC or overwrite existing routing records without applicable user authorization.
+
 Workspace instructions for ZCode agents working on AnvilWiki.
 
 ## Repository Purpose
@@ -95,7 +99,7 @@ pnpm dev              # dev server, http://localhost:4321
 pnpm build            # includes Content schema validation — fails on bad frontmatter; postbuild indexes Pagefind search
 pnpm typecheck        # astro check (0 errors expected)
 pnpm lint             # ESLint (eslint-plugin-astro)
-pnpm test             # Vitest — 24 suites (url, seo, tags, i18n-smoke, content-utils, handbook, workflows, covers, consent, affiliates, prompt, apply-template, sync-codes, community-digest, today, redirects, changelog, agents-consistency, routing-flags, landing-paths, home-ui, indexnow, codes-consistency, content-links)
+pnpm test             # Vitest — 25 suites (url, seo, tags, i18n-smoke, content-utils, handbook, workflows, covers, domain-redirect, consent, affiliates, prompt, apply-template, sync-codes, community-digest, today, redirects, changelog, agents-consistency, routing-flags, landing-paths, home-ui, indexnow, codes-consistency, content-links)
 pnpm test:e2e         # apply-template real-mode E2E (git archive → scratch copy → pipe answers → assert shape → build; CI job e2e-template runs it; tests the COMMITTED tree)
 pnpm check-config     # scripts/check-config.ts — nav/locale 3-place consistency
 pnpm new-locale       # scripts/new-locale.ts — scaffold a new language
@@ -150,3 +154,5 @@ These behaviors are NOT obvious from the docs and cost significant debugging tim
 5. **`src/content/<locale>/` triggers legacy auto-collection.** If MDX files sit directly under `src/content/<locale>/`, Astro 5 auto-generates a collection named after the locale and prints a deprecation warning. The fix: put content under a named collection dir like `src/content/wiki/<locale>/`, with `glob({ base: './src/content/wiki' })`.
 
 6. **`prefixDefaultLocale: false` means `/` is the English homepage.** Do NOT redirect `/` to `/en/`. The English homepage lives at `src/pages/index.astro`; non-default locales live at `src/pages/[locale]/index.astro`. Similarly, English content routes are at `src/pages/[...slug].astro` (no locale segment), other locales at `src/pages/[locale]/[...slug].astro`.
+
+

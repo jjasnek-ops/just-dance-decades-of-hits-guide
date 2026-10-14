@@ -75,7 +75,7 @@ const related = await getRelatedEntries(entry, servedLocale, 3);
 
 // Visible codes FAQ — same strings feed faqPageJsonLd (marking up invisible
 // content violates Google's structured-data policy).
-const codesFaqItems =
+const codesFaqItems: Array<{ question: string; answer: string }> =
   entry.data.codes && entry.data.codes.length > 0
     ? (shared.codesFaq ?? [])
     : [];

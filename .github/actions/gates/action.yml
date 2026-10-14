@@ -6,9 +6,9 @@ description: >-
   content with the exact same standard — no drift between the workflows.
 inputs:
   site-url:
-    description: 'SITE_URL for the build step (CI passes vars.SITE_URL; falls back to the demo domain).'
+    description: 'Canonical SITE_URL for this project build.'
     required: false
-    default: 'https://anvil.wiki'
+    default: 'https://justdancedecadesofhitsguide.wiki'
 
 runs:
   using: 'composite'

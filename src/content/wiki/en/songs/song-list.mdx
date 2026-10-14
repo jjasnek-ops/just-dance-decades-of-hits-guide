@@ -1,0 +1,59 @@
+---
+title: "Just Dance: Decades of Hits Song List — All 35 Tracks"
+description: "Browse all 35 Just Dance: Decades of Hits songs by title, artist and official decade group. Search and filter the Ubisoft launch tracklist."
+category: songs
+image: '../../../../assets/covers/en-songs-song-list.png'
+date: 2026-10-14
+lastModified: 2026-10-14
+author: "Decades Guide Editorial"
+tags: ["just-dance", "launch-guide", "songs"]
+gameVersion: "Launch information"
+summary: "Just Dance: Decades of Hits includes 35 songs in Ubisoft’s launch tracklist, grouped from the 1970s to the 2020s. Search by song or artist and filter by the official decade below. These are base-release tracks; extra editions, Music Packs and Just Dance+ can expand your shared library."
+---
+
+import FilterTable from '~/components/article/FilterTable.astro';
+import catalogue from '~/data/song-catalogue.json';
+
+The **complete 35-song launch tracklist** is below, checked against [Ubisoft’s October 13 launch announcement](https://news.ubisoft.com/en-us/article/4C0I0ak0v6u63UZkEdVaEl/just-dance-decades-of-hits-out-now-with-mamma-mia-by-abba-wannabe-by-spice-girls-manchild-by-sabrina-carpenter-and-more). This table counts unique song titles in that announcement, rather than alternate routines or everything you may see in a combined library.
+
+## Which songs are in the base release?
+
+Search a title or artist, choose a decade, or sort titles A–Z. The full table is in the page HTML, so it remains readable without JavaScript. Decades reproduce Ubisoft’s launch grouping, not an independently researched original release year.
+
+<FilterTable headers={['Song', 'Credited artist', 'Official decade group']} rows={catalogue.map(song => [song.title, song.artist, song.decade])} filterColumn={2} labels={{search:'Find a song or artist',placeholder:'Try ABBA, Manchild or Gorillaz…',filter:'Decade',all:'All decades',sort:'Order',original:'Official order',ascending:'Title A–Z',reset:'Reset',count:'songs shown',empty:'No matching songs. Try another title, artist or decade.',caption:'35 base-release songs · Ubisoft launch list · checked October 14, 2026'}} />
+
+## How many songs are in each decade?
+
+| Official group | Songs |
+| --- | ---: |
+| 1970s | 5 |
+| 1980s | 5 |
+| 1990s | 5 |
+| 2000s | 6 |
+| 2010s | 5 |
+| 2020s | 9 |
+| **Total** | **35** |
+
+## Why is No Scrubs under the 2000s?
+
+Ubisoft’s launch article places **No Scrubs** in the 2000s, although earlier promotion associated it with the 1990s. We retain the launch article’s group as the source of this filter. Treat it as the publisher’s grouping; this table does not assert that every recording first released in the displayed decade.
+
+## Are these the original artists and recordings?
+
+Read the credited artist carefully. For example, Ubisoft lists **Come and Get Your Love** by **The Heartliners**, **ABC** by **Groove Century**, and **Jump** by **Metal Russell**. We preserve those game credits instead of substituting a better-known original performer. An original recording is not promised by a song title alone.
+
+Ubisoft’s article spells the Hello artist “Martein Solveig” and the Starlight artist “The Superman Lovers.” The display uses **Martin Solveig** and **The Supermen Lovers**, matching [Martin Solveig’s own Hello biography](https://martinsolveig.com/79-2/) and the [independently reported launch list](https://nintendoeverything.com/just-dance-decades-of-hits-song-list-announced/). This is a spelling correction, not a different song or performer. Alternate routines are excluded because the launch announcement does not enumerate them.
+
+## Do I need Adventure Mode to unlock these songs?
+
+No. [Ubisoft’s version 27.0.1 notes](https://www.ubisoft.com/en-gb/news/ignt.63908/version-27-0-1-patch-notes-article) say the included songs can be reached through the Song Library regardless of Adventure Mode progress. The story has its own progression and rewards. Read the [Adventure Mode rules](/guides/adventure-mode/) before looking for an unlock walkthrough.
+
+## Why does my library show a different total?
+
+Purchased editions from 2023–2026, purchased Music Packs and an active Just Dance+ subscription can add songs to the shared library. They are separate entitlements and are not included in the 35-song count here. See [base game versus subscription](/guides/library-and-subscription/). This list follows the English US official launch article; we have not independently tested every regional storefront or licence variation.
+
+**Sources last checked:** October 14, 2026. **Published and last substantively modified:** October 14, 2026. This is an unofficial guide; platform and region restrictions can change.
+
+## Where can I find related answers?
+
+Use the [full song list](/songs/song-list/), compare [platforms and release dates](/guides/platforms/), or read the [Adventure Mode guide](/guides/adventure-mode/). For input and connectivity, see [how to play and offline requirements](/guides/how-to-play/) and [multiplayer](/guides/multiplayer/).

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600" role="img" aria-label="Original abstract vinyl illustration">
+  <defs>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1"><stop stop-color="hsl(337,71%,51%)"/><stop offset="1" stop-color="hsl(337,71%,78%)"/></linearGradient>
+    <linearGradient id="disc"><stop stop-color="hsl(222,47%,16%)"/><stop offset="1" stop-color="hsl(222,47%,5%)"/></linearGradient>
+  </defs>
+  <circle cx="305" cy="292" r="250" fill="none" stroke="hsl(337,71%,51%)" stroke-opacity=".12" stroke-width="28"/>
+  <circle cx="305" cy="292" r="227" fill="url(#disc)"/>
+  <g fill="none" stroke="hsl(222,15%,70%)" stroke-opacity=".19"><circle cx="305" cy="292" r="207"/><circle cx="305" cy="292" r="187"/><circle cx="305" cy="292" r="167"/><circle cx="305" cy="292" r="147"/><circle cx="305" cy="292" r="127"/></g>
+  <circle cx="305" cy="292" r="95" fill="url(#ring)"/>
+  <circle cx="305" cy="292" r="36" fill="hsl(222,47%,8%)"/>
+  <circle cx="305" cy="292" r="9" fill="hsl(337,71%,83%)"/>
+  <path d="M137 114a210 210 0 0 1 109-41" fill="none" stroke="white" stroke-opacity=".3" stroke-width="12" stroke-linecap="round"/>
+  <g fill="hsl(337,71%,51%)"><path d="m491 76 7 20 21 7-21 7-7 20-7-20-21-7 21-7Z"/><path d="m95 413 6 17 18 6-18 6-6 17-6-17-18-6 18-6Z"/></g>
+  <g transform="translate(383 423) rotate(-8)"><rect width="161" height="71" rx="16" fill="hsl(337,71%,96%)" stroke="hsl(337,71%,73%)" stroke-width="2"/><text x="20" y="30" font-family="Arial,sans-serif" font-weight="bold" font-size="16" fill="hsl(337,71%,35%)">FIND YOUR ERA</text><text x="20" y="52" font-family="Arial,sans-serif" font-size="14" fill="hsl(222,47%,16%)">1970s — 2020s</text></g>
+  <g transform="translate(36 142) rotate(-12)"><rect width="135" height="62" rx="14" fill="hsl(222,47%,8%)"/><text x="18" y="27" font-family="Arial,sans-serif" font-size="14" font-weight="bold" fill="white">35 TRACKS</text><text x="18" y="46" font-family="Arial,sans-serif" font-size="12" fill="hsl(337,71%,78%)">ONE COLLECTION</text></g>
+</svg>

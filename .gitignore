@@ -56,3 +56,6 @@ out/
 
 # anvil-ops site-local ops data (metrics --import-aio --save CSV archives) — never swept into a submit PR
 ops/
+
+# Local research captures and API evidence
+research/

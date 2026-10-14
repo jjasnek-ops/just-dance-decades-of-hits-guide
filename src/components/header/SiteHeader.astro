@@ -32,7 +32,9 @@ const headerLocales = availableLocales ?? locales;
 
 // Build the strip regex from `locales` — a hardcoded "en|ja" list would
 // silently break for forks that add languages (same rationale as BaseLayout).
-const localePrefixRe = new RegExp(`^/(${locales.filter((l) => l !== defaultLocale).join('|')})(?=/|$)`);
+const localePrefixRe = new RegExp(
+  `^/(${locales.filter((l) => l !== defaultLocale).join('|')})(?=/|$)`,
+);
 
 const samePagePathFor = (loc: Locale) => {
   // Strip existing locale prefix, then prepend the new one. Homepages go
@@ -50,14 +52,16 @@ const samePagePathFor = (loc: Locale) => {
 
 <header class="sticky top-0 z-40 w-full border-b border-border bg-background/80 backdrop-blur">
   <div class="mx-auto flex h-14 max-w-7xl items-center gap-4 px-4">
-    {/* Logo — homeUrl keeps demo builds pointing at /demo/ (the root is the
-        storefront gateway); forks get '/' exactly as before. */}
+    {
+      /* Logo — homeUrl keeps demo builds pointing at /demo/ (the root is the
+        storefront gateway); forks get '/' exactly as before. */
+    }
     <a
       href={homeUrl(locale)}
       class="flex items-center gap-2 font-bold text-foreground"
       aria-label={site.name}
     >
-      <Icon name="lucide:hammer" class="h-6 w-6 text-nav" />
+      <Icon name={site.logoIcon ?? 'lucide:book-open'} class="h-6 w-6 text-nav" />
       <span class="hidden sm:inline">{site.shortName}</span>
     </a>
 
@@ -89,20 +93,26 @@ const samePagePathFor = (loc: Locale) => {
 
     {/* Right actions */}
     <div class="ml-auto flex items-center gap-1">
-      {landingLinkEnabled && (
-        <a
-          href={landingLink.href}
-          class="inline-flex h-9 items-center gap-1.5 rounded-md px-2 text-xs font-medium text-muted-foreground transition hover:bg-muted hover:text-nav"
-          aria-label={landingLink.ariaLabel}
-          title={landingLink.ariaLabel}
-        >
-          <Icon name="lucide:hammer" class="h-5 w-5 shrink-0" />
-          <span class="hidden whitespace-nowrap lg:inline">{landingLink.label}</span>
-        </a>
-      )}
+      {
+        landingLinkEnabled && (
+          <a
+            href={landingLink.href}
+            class="inline-flex h-9 items-center gap-1.5 rounded-md px-2 text-xs font-medium text-muted-foreground transition hover:bg-muted hover:text-nav"
+            aria-label={landingLink.ariaLabel}
+            title={landingLink.ariaLabel}
+          >
+            <Icon name="lucide:hammer" class="h-5 w-5 shrink-0" />
+            <span class="hidden whitespace-nowrap lg:inline">{landingLink.label}</span>
+          </a>
+        )
+      }
       <SearchButton locale={locale} />
       <ThemeToggle />
-      <LanguageSwitcher locale={locale} pathFor={samePagePathFor} availableLocales={availableLocales} />
+      <LanguageSwitcher
+        locale={locale}
+        pathFor={samePagePathFor}
+        availableLocales={availableLocales}
+      />
 
       {/* Mobile menu */}
       <details class="relative md:hidden">
@@ -150,24 +160,28 @@ const samePagePathFor = (loc: Locale) => {
                 </a>
               ))
             }
-            {landingLinkEnabled && (
-              <a
-                href={zhLandingLink.href}
-                class="block border-t border-border px-3 py-2 text-sm text-muted-foreground transition hover:bg-muted hover:text-nav"
-              >
-                {zhLandingLink.label}
-              </a>
-            )}
+            {
+              landingLinkEnabled && (
+                <a
+                  href={zhLandingLink.href}
+                  class="block border-t border-border px-3 py-2 text-sm text-muted-foreground transition hover:bg-muted hover:text-nav"
+                >
+                  {zhLandingLink.label}
+                </a>
+              )
+            }
           </div>
-          {landingLinkEnabled && (
-            <a
-              href={landingLink.href}
-              class="mt-1 flex items-center gap-2 border-t border-border px-3 py-2 text-sm text-muted-foreground transition hover:bg-muted hover:text-nav"
-            >
-              <Icon name="lucide:hammer" class="h-4 w-4" />
-              <span>{landingLink.label}</span>
-            </a>
-          )}
+          {
+            landingLinkEnabled && (
+              <a
+                href={landingLink.href}
+                class="mt-1 flex items-center gap-2 border-t border-border px-3 py-2 text-sm text-muted-foreground transition hover:bg-muted hover:text-nav"
+              >
+                <Icon name="lucide:hammer" class="h-4 w-4" />
+                <span>{landingLink.label}</span>
+              </a>
+            )
+          }
         </div>
       </details>
     </div>

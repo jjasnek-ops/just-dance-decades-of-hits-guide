@@ -10,6 +10,7 @@ import { locales, defaultLocale } from './src/i18n/routing';
 import { CONTENT_TYPES } from './src/config/navigation';
 import { fallbackDetailPaths } from './src/lib/fallback-paths';
 import { landingLinkEnabled } from './src/config/project';
+import { siteUrl } from './src/config/site';
 
 /**
  * Build a map of page path → lastmod ISO date, read from MDX frontmatter
@@ -195,7 +196,7 @@ function buildLastmodMap(
   return map;
 }
 
-const siteOrigin = process.env.SITE_URL || 'https://anvil.wiki';
+const siteOrigin = siteUrl;
 
 // trailingSlash:'always' makes every generated URL end with "/", but the
 // lookup tables above (lastmodMap / noindexPaths / coverage keys) are built
@@ -240,6 +241,7 @@ const lastmodMap = buildLastmodMap(noindexPaths, localeCoverage, detailCoverage,
  * ("bosses" → locale "bos" + category "ses") and silently drop alternates.
  */
 function alternatesFor(pagePath: string): Array<{ lang: string; url: string }> | undefined {
+  if (locales.length < 2) return undefined;
   // Article: /<cat>/<slug…> or /<locale>/<cat>/<slug…>
   const art = pagePath.match(/^\/(?:([a-z]{2,3})\/)?([a-z-]+)\/(.+)$/);
   if (art && (locales as readonly string[]).includes(art[1] ?? defaultLocale)) {
@@ -278,7 +280,7 @@ function alternatesFor(pagePath: string): Array<{ lang: string; url: string }> |
 
 // https://astro.build/config
 export default defineConfig({
-  site: process.env.SITE_URL || 'https://anvil.wiki',
+  site: siteUrl,
   output: 'static',
   // Astro 7 flipped the default from true to 'jsx', which strips whitespace
   // between adjacent inline elements ("word" + "word" can render joined).

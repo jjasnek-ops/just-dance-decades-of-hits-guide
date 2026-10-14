@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Optional config-driven hero artwork; no game content in the renderer. */
+.hero-layout { display: grid; align-items: center; gap: 2rem; }
+.hero-copy { min-width: 0; }
+.hero-art { width: min(100%, 480px); height: auto; margin: auto; }
+@media (min-width: 900px) {
+  .hero-layout { grid-template-columns: 1.2fr 1fr; }
+  .hero-art { transform: rotate(-5deg); }
+}
+@media (max-width: 899px) {
+  .hero-art { width: 260px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}
+
 /**
  * Theme color variables — the ONLY place to change colors when re-theming.
  *
@@ -12,11 +27,11 @@
 @layer base {
   :root {
     /* Light mode theme color — Anvil orange (forge fire). */
-    --brand: 22 90% 52%;
-    --brand-light: 22 90% 62%;
+    --brand: 337 71% 51%;
+    --brand-light: 337 71% 61%;
     /* Split H/S for derived shades (e.g. darker button backgrounds). */
-    --brand-h: 22;
-    --brand-s: 90%;
+    --brand-h: 337;
+    --brand-s: 71%;
     /* Text-safe shade of the brand: --brand at 52% lightness is only 3.1:1
        on white (WCAG AA needs 4.5:1 for text). Derived from the H/S splits,
        so fork themes that only edit --brand/--brand-light stay consistent. */
@@ -25,10 +40,10 @@
 
   .dark {
     /* Dark mode theme color — slightly deeper. */
-    --brand: 22 85% 48%;
-    --brand-light: 22 85% 58%;
-    --brand-h: 22;
-    --brand-s: 85%;
+    --brand: 337 66% 47%;
+    --brand-light: 337 66% 57%;
+    --brand-h: 337;
+    --brand-s: 66%;
     --brand-text: var(--brand-h) var(--brand-s) 52%;
   }
 }

@@ -36,6 +36,7 @@ concurrency:
 
 jobs:
   publish:
+    if: github.repository == 'PNGTRID/AnvilWiki'
     runs-on: ubuntu-latest
     # Required-reviewer gate (the environment is created/managed repo-side,
     # not by this file). A tag push waits for owner approval in the Actions

@@ -259,7 +259,10 @@ const privacyLabel = consent?.privacyLabel ?? footerStrings.privacyPolicy ?? 'Pr
               dataLayer.push(arguments);
             }
             gtag('js', new Date());
-            gtag('config', gaId);
+            gtag('config', gaId, {
+              allow_google_signals: false,
+              allow_ad_personalization_signals: false,
+            });
           }
           if (adsenseClient) {
             const s = document.createElement('script');

@@ -27,7 +27,7 @@ Game-specific settings belong in `src/config/`, English interface copy in `src/l
 
 Articles distinguish confirmed details from information that has not been verified. Local reports and research captures are excluded from Git. Never commit API credentials or environment files. Credentials used by the domain scripts are read from the process or user environment.
 
-Ads, analytics and comments are disabled. This site uses original abstract artwork and does not distribute game files, recordings or lyrics. It is not affiliated with or endorsed by Ubisoft or the Just Dance rightsholders.
+Google Analytics 4 (`G-Y3REG5HWGK`) loads only after visitor consent. The direct-upload build reads its public measurement ID from `wrangler.toml`. Ads, Cloudflare Web Analytics and comments are disabled. Search Console domain ownership is verified by an additional DNS TXT record. This site uses original abstract artwork and does not distribute game files, recordings or lyrics. It is not affiliated with or endorsed by Ubisoft or the Just Dance rightsholders.
 
 ## Template and license
 

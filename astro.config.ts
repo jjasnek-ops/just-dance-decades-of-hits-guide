@@ -348,6 +348,14 @@ export default defineConfig({
     icon(),
   ],
   vite: {
+    // Direct-upload builds run before Wrangler supplies its runtime vars.
+    // Read the public measurement ID from the same checked-in configuration.
+    define: {
+      'import.meta.env.PUBLIC_GA_ID': JSON.stringify(
+        fs.readFileSync(path.resolve('./wrangler.toml'), 'utf8')
+          .match(/^PUBLIC_GA_ID\s*=\s*"([^"]*)"\s*$/m)?.[1] ?? '',
+      ),
+    },
     resolve: {
       alias: {
         '~': '/src',

@@ -35,7 +35,7 @@
     "share": "Share",
     "copyLink": "Copy link",
     "copied": "Copied!",
-    "consentText": "We use cookies for analytics and ads to keep this site free.",
+    "consentText": "Allow Google Analytics cookies to help us understand visits and improve this guide? You can decline and keep using every feature.",
     "accept": "Accept",
     "decline": "Decline",
     "consentTitle": "Cookies",
@@ -387,13 +387,21 @@
       "sections": [
         {
           "heading": "Accounts and submissions",
-          "text": "Reading the guide requires no account. The site has no login, purchase, upload, email capture or contact form. Song filtering and Pagefind searches run in your browser; this site does not provide an analytics endpoint to collect those queries.",
+          "text": "Reading the guide requires no account. The site has no login, purchase, upload, email capture or contact form. Song filtering and Pagefind searches run in your browser. Do not put personal information into URLs or search queries.",
           "links": []
         },
         {
           "heading": "Cookies and browser storage",
-          "text": "Advertisements, Google Analytics, Cloudflare Web Analytics and third-party comments are disabled. Theme preference and helpfulness feedback may be stored locally by template features. Local storage can be cleared through browser settings.",
+          "text": "Google Analytics 4 loads only after you accept the cookie banner. Declining keeps analytics off and does not restrict the guide. Your choice, theme preference and helpfulness feedback may be stored locally. To change your choice, clear this site's browser storage and reload; you can also remove previously set analytics cookies through browser settings. Advertisements, Cloudflare Web Analytics and third-party comments remain disabled.",
           "links": []
+        },
+        {
+          "heading": "Optional Google Analytics",
+          "text": "If you accept, Google Analytics uses cookies and receives page addresses and titles, visit and interaction events, referral information and browser/device information to produce traffic and engagement reports. Enhanced measurement may include scrolling, outbound links, downloads and searches encoded in page URLs. We do not intentionally send names, email addresses or account details. Google processes this data under its own policies, and data may be processed outside your country. We do not use this guide for advertising personalization.",
+          "links": [
+            { "label": "How Google uses information from sites and apps", "href": "https://policies.google.com/technologies/partner-sites" },
+            { "label": "Google Analytics opt-out browser add-on", "href": "https://tools.google.com/dlpage/gaoptout" }
+          ]
         },
         {
           "heading": "Hosting and request processing",
@@ -412,7 +420,7 @@
         },
         {
           "heading": "Future changes and privacy contact",
-          "text": "This notice must be revised before enabling analytics, advertising or other data collection. For a question about the guide, use the repository issue channel without submitting private account information.",
+          "text": "We update this notice when the site's data collection changes. For a privacy question about the guide, use the repository issue channel without submitting private account information.",
           "links": [
             {
               "label": "Contact the guide maintainers",

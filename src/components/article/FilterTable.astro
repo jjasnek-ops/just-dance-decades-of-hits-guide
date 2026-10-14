@@ -163,7 +163,11 @@ const filters = [...new Set(rows.map((row) => row[filterColumn]))];
     border: 1px solid hsl(var(--border));
     border-radius: 0.8rem;
   }
-  table {
+  .catalogue-scroll > table {
+    /* Override the global prose-table block rule: this focusable wrapper
+       owns horizontal scrolling, including native keyboard navigation. */
+    display: table;
+    overflow: visible;
     width: 100%;
     border-collapse: collapse;
     font-size: 0.9rem;

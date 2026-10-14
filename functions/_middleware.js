@@ -2,7 +2,10 @@
 export function onRequest({ request, env, next }) {
   const canonical = new URL(env.SITE_URL);
   const url = new URL(request.url);
-  if (url.hostname === `www.${canonical.hostname}`) {
+  if (
+    url.hostname === `www.${canonical.hostname}` ||
+    (url.hostname === canonical.hostname && url.protocol !== canonical.protocol)
+  ) {
     url.protocol = canonical.protocol;
     url.hostname = canonical.hostname;
     url.port = canonical.port;
